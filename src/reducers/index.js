@@ -1,10 +1,12 @@
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_FAVORITE':
-      return {
-        ...state,
-        myList: [...state.myList, action.payload],
-      };
+      return state.myList.find((items) => items.id === action.payload.id) ?
+        { ...state } :
+        {
+          ...state,
+          myList: [...state.myList, action.payload],
+        };
     case 'DELETE_FAVORITE':
       return {
         ...state,

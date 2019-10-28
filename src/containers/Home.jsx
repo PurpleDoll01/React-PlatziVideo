@@ -16,7 +16,13 @@ const Home = ({ myList, trends, originals }) => {
       {myList.length > 0 && (
         <Categories title='Mi lista'>
           <Carousel>
-            {myList.map((item) => <CarouselItem key={item.id} {...item} />)}
+            {myList.map((item) => (
+              <CarouselItem
+                key={item.id}
+                {...item}
+                isList
+              />
+            ))}
           </Carousel>
         </Categories>
       )}
@@ -36,7 +42,7 @@ const Home = ({ myList, trends, originals }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     myList: state.myList,
     trends: state.trends,
