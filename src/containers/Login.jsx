@@ -29,6 +29,13 @@ const Login = (props) => {
         <h2>Inicia sesión</h2>
         <form className='login__container--form' onSubmit={handleSubmit}>
           <input
+            name='name'
+            className='input'
+            type='text'
+            placeholder='Nombre'
+            onChange={handleInput}
+          />
+          <input
             name='email'
             className='input'
             type='text'
